@@ -60,7 +60,7 @@ function fish_prompt
     set_color -o green
     echo -n ]
     set_color normal
-    echo -n (__fish_git_prompt)
+    #echo -n (__fish_git_prompt)
     echo
     set_color normal
     for job in (jobs)
@@ -100,9 +100,9 @@ set -x LS_COLORS 'rs=0:di=01;33:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;
 
 set -x MYSQL_PS1 "(\u@\h) [\d]> "
 
-set __fish_git_prompt_showdirtystate 'yes'
-set __fish_git_prompt_showstashstate 'yes'
-set __fish_git_prompt_showupstream 'yes'
-set __fish_git_prompt_color_branch green
+#set __fish_git_prompt_showdirtystate 'yes'
+#set __fish_git_prompt_showstashstate 'yes'
+#set __fish_git_prompt_showupstream 'yes'
+#set __fish_git_prompt_color_branch green
 
 
