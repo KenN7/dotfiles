@@ -1,9 +1,8 @@
 " My vim dotfile
 
 runtime bundle/vim-pathogen/autoload/pathogen.vim
-execute pathogen#infect()
+call pathogen#infect()
 filetype plugin indent on
-set omnifunc=syntaxcomplete#Complete
 
 let g:SuperTabDefaultCompletionType = "<c-x><c-o>"
 set number

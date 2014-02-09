@@ -8,18 +8,21 @@
   tab_position = bottom
   inactive_color_offset = 0.81
   title_inactive_bg_color = "#2f2f2f"
+[keybindings]
 [profiles]
   [[default]]
     scrollbar_position = hidden
     use_system_font = False
-    font = source code pro 9
+    font = Source Code Pro Medium 10
     visible_bell = True
     background_darkness = 0.74
     urgent_bell = True
     background_type = transparent
     background_image = None
     foreground_color = "#dcdccc"
+    scroll_on_keystroke = False
     copy_on_selection = True
+    scrollback_lines = 1500
   [[n&b]]
     background_image = None
 [layouts]
