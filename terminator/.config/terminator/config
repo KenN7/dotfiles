@@ -13,7 +13,7 @@
   [[default]]
     scrollbar_position = hidden
     use_system_font = False
-    font = Source Code Pro Medium 10
+    font = Source Code Pro Medium 9
     visible_bell = True
     background_darkness = 0.74
     urgent_bell = True
