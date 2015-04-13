@@ -9,4 +9,3 @@ alias vi='vim'
 alias vd='vimdiff'
 alias mplayer='mplayer -fs'
 alias matlab='matlab -nodisplay -nojvm'
-
