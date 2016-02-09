@@ -91,7 +91,7 @@ end
 
 . ~/.bash_aliases
 
-eval (envoy -p -f)
+#envoy -p -f
 
 set -x EDITOR vim
 set -x BROWSER links
