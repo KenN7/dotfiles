@@ -1,9 +1,5 @@
 " My vim dotfile
 
-runtime bundle/vim-pathogen/autoload/pathogen.vim
-call pathogen#infect()
-filetype plugin indent on
-
 let g:SuperTabDefaultCompletionType = "<c-x><c-o>"
 set number
 set nocompatible
