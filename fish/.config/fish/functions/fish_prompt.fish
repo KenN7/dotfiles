@@ -38,8 +38,8 @@ function fish_prompt
     
     # Check if acpi exists
     if not set -q __fish_nim_prompt_has_acpi
-    	if type acpi > /dev/null
-    		set -g __fish_nim_prompt_has_acpi ''
+    	if type acpi 2> /dev/null
+    		set -g __fish_nim_prompt_has_acpi 'true'
     	else
     		set -g __fish_nim_prompt_has_acpi '' # empty string
     	end
@@ -55,13 +55,6 @@ function fish_prompt
 		end
 	end
     echo
-    set_color normal
-    for job in (jobs)
-        set_color $retc
-        echo -n '; '
-        set_color brown
-        echo $job
-    end
     set_color normal
     set_color $retc
     echo -n "'->"
