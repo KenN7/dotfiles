@@ -1,4 +1,5 @@
 [global_config]
+  enabled_plugins = ActivityWatch, LaunchpadCodeURLHandler, APTURLHandler, LaunchpadBugURLHandler
   focus = mouse
   inactive_color_offset = 0.81
   tab_position = bottom
@@ -9,6 +10,10 @@
   title_transmit_bg_color = "#dfdfdf"
   title_transmit_fg_color = "#000000"
 [keybindings]
+  go_down = <Primary>Down
+  go_left = <Primary>Left
+  go_right = <Primary>Right
+  go_up = <Primary>Up
 [layouts]
   [[default]]
     [[[child1]]]
