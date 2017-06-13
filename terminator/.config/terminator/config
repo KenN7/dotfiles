@@ -1,5 +1,5 @@
 [global_config]
-  enabled_plugins = ActivityWatch, LaunchpadCodeURLHandler, APTURLHandler, LaunchpadBugURLHandler
+  enabled_plugins = ActivityWatch,
   focus = mouse
   inactive_color_offset = 0.81
   tab_position = bottom
