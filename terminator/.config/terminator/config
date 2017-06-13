@@ -27,7 +27,6 @@
 [profiles]
   [[default]]
     background_darkness = 0.78
-    background_image = None
     background_type = transparent
     copy_on_selection = True
     font = Source Code Pro Medium 10
@@ -39,4 +38,3 @@
     use_system_font = False
     visible_bell = True
   [[n&b]]
-    background_image = None
