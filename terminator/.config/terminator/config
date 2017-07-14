@@ -26,10 +26,10 @@
 [plugins]
 [profiles]
   [[default]]
-    background_darkness = 0.78
-    background_image = None
+    background_darkness = 0.85
     background_type = transparent
     copy_on_selection = True
+    cursor_color = "#dcdccc"
     font = Source Code Pro Medium 10
     foreground_color = "#dcdccc"
     scroll_on_keystroke = False
@@ -39,4 +39,3 @@
     use_system_font = False
     visible_bell = True
   [[n&b]]
-    background_image = None
