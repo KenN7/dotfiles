@@ -26,7 +26,11 @@
 [plugins]
 [profiles]
   [[default]]
+<<<<<<< HEAD
     background_darkness = 0.85
+=======
+    background_darkness = 0.78
+>>>>>>> 0fd37feb9fa7915a39ff751e09ac576daf55baca
     background_type = transparent
     copy_on_selection = True
     cursor_color = "#dcdccc"
