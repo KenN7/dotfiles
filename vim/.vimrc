@@ -1,6 +1,7 @@
 " My vim dotfile
-
-let g:SuperTabDefaultCompletionType = "<c-x><c-o>"
+execute pathogen#infect()
+" let g:SuperTabDefaultCompletionType = "<c-x><c-o>"
+filetype plugin indent on
 set number
 set nocompatible
 syntax on
