@@ -1,0 +1,1 @@
+/home/ken/.config/fisherman/z/functions/z.awk
