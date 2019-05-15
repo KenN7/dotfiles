@@ -8,4 +8,5 @@ end
 eval (thefuck --alias | tr '
 ' ';')
 
-set PATH /home/ken/dotfiles/scripts $PATH
+set PATH /home/ken/dotfiles/scripts /home/ken/.local/bin $PATH
+source /home/ken/.config/fish/aliases.fish

@@ -24,3 +24,4 @@ set smartcase
 set hidden
 set wildmenu
 set title
+set mouse=a
