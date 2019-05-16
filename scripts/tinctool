@@ -80,10 +80,15 @@ while getopts "v:glp:" opt; do
             ;;
         *)
             usage
-            exit 1
+#            exit 1
             ;;
     esac
 done
 
-#usage
+if [ $OPTIND -eq 1 ]; then 
+    echo "No options were passed"
+    usage
+    exit 1
+fi
+
 exit 0
