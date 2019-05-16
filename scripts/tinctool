@@ -1,0 +1,89 @@
+#!/bin/bash
+
+CONF_FOLDER=/etc/tinc/kenh/hosts
+
+vpnup () {
+    ORIGINAL_GATEWAY=`ip route show | grep ^default | cut -d ' ' -f 2-5`
+
+    ip route add 94.23.38.54 $ORIGINAL_GATEWAY
+    ip route add 0.0.0.0/1 via 10.10.10.1 dev tun0
+    ip route add 128.0.0.0/1 via 10.10.10.1 dev tun0
+}
+
+vpndown () {
+    ORIGINAL_GATEWAY=`ip route show | grep ^default | cut -d ' ' -f 2-5`
+
+    ip route del 94.23.38.54 $ORIGINAL_GATEWAY
+    ip route del 0.0.0.0/1 dev tun0
+    ip route del 128.0.0.0/1 dev tun0
+}
+
+listnodes () {
+    list_names=$(ls $CONF_FOLDER)
+    list_ips=()
+    regex="Subnet = ([0-9\.]*)"
+    echo "-- Name -- IP --" 
+    for node in $list_names
+    do
+        file=$(cat $CONF_FOLDER/$node)
+        if [[ $file =~ $regex ]]; then
+            list_ips+=($BASH_REMATCH[1])
+            echo "-- $node -- ${BASH_REMATCH[1]} --"
+        else echo "no match for node $node"
+        fi
+    done
+}
+
+pingnode () {
+    node=$1
+    if [[ ! -f "$CONF_FOLDER/$node" ]]; then
+        echo "No file associated with node $node"
+        exit 1
+    fi
+    file=$(cat $CONF_FOLDER/$node)
+    regex="Subnet = ([0-9\.]*)"
+    if [[ $file =~ $regex ]]; then
+        ping ${BASH_REMATCH[1]}
+    else echo "no match for node"
+    fi
+}
+
+viewgraph () {
+    inkview /tmp/tinc.kenh.svg
+}
+
+usage () {
+    echo "Usage: tinctool [-g] [-v on|off] [-l] [-p host]"
+}
+
+#listnodes
+#pingnode "bb8"
+
+while getopts "v:glp:" opt; do
+    case $opt in
+        v)
+            if [[ $OPTARG = "on" ]]; then
+                vpnup
+            elif [[ $OPTARG = "off" ]]; then
+                vpndown
+            else echo "Invalid arg $OPTARG for -v"
+            fi
+            ;;
+        l)
+            listnodes
+            ;;
+        p)
+            pingnode $OPTARG
+            ;;
+        g)
+            viewgraph
+            ;;
+        *)
+            usage
+            exit 1
+            ;;
+    esac
+done
+
+#usage
+exit 0
