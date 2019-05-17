@@ -53,13 +53,22 @@ viewgraph () {
 }
 
 usage () {
-    echo "Usage: tinctool [-g] [-v on|off] [-l] [-p host]"
+    echo "Usage: tinctool [-g] [-v on|off] [-l] [-p host] [-h]"
+}
+
+printhelp() {
+    usage
+    echo -e "\t -g: show tinc graph (if setup in tinc conf) "
+    echo -e "\t -v on|off: turn on or off vpn gateway-reirect"
+    echo -e "\t -l: list nodes and ips of the vpn network"
+    echo -e "\t -p host: ping host by name (see -l for names)"
+    echo -e "\t -h: prints this help"
 }
 
 #listnodes
 #pingnode "bb8"
 
-while getopts "v:glp:" opt; do
+while getopts "v:ghlp:" opt; do
     case $opt in
         v)
             if [[ $OPTARG = "on" ]]; then
@@ -78,9 +87,11 @@ while getopts "v:glp:" opt; do
         g)
             viewgraph
             ;;
+        h)
+            printhelp
+            ;;
         *)
             usage
-#            exit 1
             ;;
     esac
 done
