@@ -1,5 +1,7 @@
 ## NOTES when installing and uing:
 
+# You need python-neovim for a lot of things
+
 # For vim and nvim autocompletion using YCM:
 If using CMake, add -DCMAKE_EXPORT_COMPILE_COMMANDS=ON when configuring 
 (or add set( CMAKE_EXPORT_COMPILE_COMMANDS ON ) to CMakeLists.txt) 

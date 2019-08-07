@@ -14,30 +14,18 @@ Plug 'tpope/vim-commentary'
 Plug 'Yggdroot/indentLine'
 Plug 'jistr/vim-nerdtree-tabs'
 Plug 'scrooloose/nerdtree'
-" Plug 'ervandew/supertab'
 Plug 'severin-lemaignan/vim-minimap'
 Plug 'slim-template/vim-slim'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'Valloric/YouCompleteMe', { 'dir': '~/.vim/plugged/YouCompleteMe', 'do': 'python3 install.py --all' }
-
-" Deoplete nvim and vim support
-" if has('nvim')
-"   Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-" else
-"   Plug 'Shougo/deoplete.nvim'
-"   Plug 'roxma/nvim-yarp'
-"   Plug 'roxma/vim-hug-neovim-rpc'
-" endif
-" let g:deoplete#enable_at_startup = 1
+Plug 'sbdchd/neoformat'
 
 call plug#end()
 
 """""""""""""""""""""""""""
 " Vim conf
 """"""""""""""""""""""""""
-" deoplete activate tab navigation
-" inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
 
 " disable bells
 autocmd! GUIEnter * set vb t_vb=
@@ -102,16 +90,6 @@ let g:indentLine_enabled=1
 let g:indentLine_color_term=235
 let g:indentLine_char='┆'
 
-" Syntastic
-" set statusline+=%#warningmsg#
-" set statusline+=%{SyntasticStatuslineFlag()}
-" set statusline+=%*
-
-" let g:syntastic_always_populate_loc_list=1
-" let g:syntastic_auto_loc_list=1
-" let g:syntastic_check_on_open=1
-" let g:syntastic_check_on_wq=0
-
 " Start minimap
 let g:minimap_highlight='Visual'
 autocmd VimEnter * Minimap
@@ -162,3 +140,21 @@ noremap <silent> <C-f> ::NERDTreeToggle<CR>
 " Select all
 map <C-a> <esc>ggVG<CR>
 
+" Insert mode completion for fzf
+" search path of file of folder in current project (subdirs)
+imap <c-x><c-f> <plug>(fzf-complete-path)
+
+" search in the whole home folder (can be long)
+inoremap <c-x><c-h> <c-r>=fzf#vim#complete#path("find ~/ -path '*/\.*' -prune -o -print \| sed '1d'")<cr>
+
+" fuzzy ripgrep into file of any precise folder :PRg <folder> <pattern>
+command! -bang -nargs=* PRg
+  \ call fzf#vim#grep(
+  \ "rg --column --line-number --no-heading --color=always --smart-case ".<q-args>, 1,
+  \ <bang>0)
+
+" fuzzy ripgrep into depot folder of my home
+command! -bang -nargs=* DepRg
+  \ call fzf#vim#grep(
+  \ "rg --column --line-number --no-heading --color=always --smart-case " . <q-args> . " ~/depots", 1,
+  \ <bang>0)
