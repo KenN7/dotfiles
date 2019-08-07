@@ -19,7 +19,7 @@ Plug 'severin-lemaignan/vim-minimap'
 Plug 'slim-template/vim-slim'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
-Plug 'Valloric/YouCompleteMe'
+Plug 'Valloric/YouCompleteMe', { 'dir': '~/.vim/plugged/YouCompleteMe', 'do': 'python3 install.py --all' }
 
 " Deoplete nvim and vim support
 " if has('nvim')
