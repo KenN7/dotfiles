@@ -76,6 +76,7 @@ set lazyredraw
 " Theme
 set background=dark
 set termguicolors
+let g:quantum_black=1
 colorscheme quantum
 " set guifont=DejaVu\ Sans\ Mono\ for\ Powerline:h14
 
