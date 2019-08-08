@@ -14,7 +14,7 @@ Plug 'jiangmiao/auto-pairs'
 Plug 'Yggdroot/indentLine'
 Plug 'jistr/vim-nerdtree-tabs'
 Plug 'scrooloose/nerdtree'
-Plug 'severin-lemaignan/vim-minimap'
+Plug 'majutsushi/tagbar'
 Plug 'slim-template/vim-slim'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
@@ -93,9 +93,8 @@ let g:indentLine_enabled=1
 let g:indentLine_color_term=235
 let g:indentLine_char='┆'
 
-" Start minimap
-let g:minimap_highlight='Visual'
-autocmd VimEnter * Minimap
+" Start tagbar
+autocmd VimEnter * TagbarToggle
 
 " Display an error message.
 function! s:Warn(msg)
