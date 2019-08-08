@@ -9,8 +9,8 @@ Plug 'tyrannicaltoucan/vim-quantum'
 Plug 'tpope/vim-fugitive'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'Townk/vim-autoclose'
 Plug 'tpope/vim-commentary'
+Plug 'jiangmiao/auto-pairs'
 Plug 'Yggdroot/indentLine'
 Plug 'jistr/vim-nerdtree-tabs'
 Plug 'scrooloose/nerdtree'
@@ -59,6 +59,9 @@ set clipboard+=unnamed
 
 " Keep Undo history on buffer change
 set hidden
+
+" optimization
+set lazyredraw
 
 " Reload files after change on Disk
 " set autoread
@@ -136,6 +139,9 @@ noremap <C-q> :bp<cr>:bd #<cr>
 
 " Toggle Nerdtree
 noremap <silent> <C-f> ::NERDTreeToggle<CR>
+
+" remap ESC to exit terminal mode
+tnoremap <Esc> <C-\><C-n>
 
 " Select all
 map <C-a> <esc>ggVG<CR>
