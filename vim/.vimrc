@@ -11,7 +11,8 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'tpope/vim-commentary'
 Plug 'jiangmiao/auto-pairs'
-Plug 'Yggdroot/indentLine'
+" Plug 'Yggdroot/indentLine'
+Plug 'nathanaelkane/vim-indent-guides'
 Plug 'jistr/vim-nerdtree-tabs'
 Plug 'scrooloose/nerdtree'
 Plug 'majutsushi/tagbar'
@@ -20,10 +21,11 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'Valloric/YouCompleteMe', { 'dir': '~/.vim/plugged/YouCompleteMe', 'do': 'python3 install.py --all' }
 Plug 'sbdchd/neoformat'
+Plug 'lervag/vimtex'
 
 call plug#end()
 
-"""""""""""""""""""""""""""
+""""""""""""""""""""""""""
 " Vim conf
 """"""""""""""""""""""""""
 
@@ -61,7 +63,7 @@ set clipboard+=unnamed
 set hidden
 
 " optimization
-set lazyredraw
+" set lazyredraw
 
 " Reload files after change on Disk
 " set autoread
@@ -92,9 +94,10 @@ let g:airline_powerline_fonts=1
 let g:airline#extensions#branch#enabled=1
 
 " Indent Guides
-let g:indentLine_enabled=1
-let g:indentLine_color_term=235
-let g:indentLine_char='┆'
+" let g:indentLine_enabled=1
+" let g:indentLine_color_term=235
+" let g:indentLine_char='┆'
+let g:indent_guides_enable_on_vim_startup = 1
 
 " YCM options
 let g:ycm_python_binary_path = 'python3'
