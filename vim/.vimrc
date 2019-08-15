@@ -11,7 +11,6 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'tpope/vim-commentary'
 Plug 'jiangmiao/auto-pairs'
-" Plug 'Yggdroot/indentLine'
 Plug 'nathanaelkane/vim-indent-guides'
 Plug 'jistr/vim-nerdtree-tabs'
 Plug 'scrooloose/nerdtree'
@@ -22,6 +21,8 @@ Plug 'junegunn/fzf.vim'
 Plug 'Valloric/YouCompleteMe', { 'dir': '~/.vim/plugged/YouCompleteMe', 'do': 'python3 install.py --all' }
 Plug 'sbdchd/neoformat'
 Plug 'lervag/vimtex'
+" my shit \o/
+Plug 'kenn7/vim-arsync'
 
 call plug#end()
 
@@ -76,6 +77,9 @@ set tabstop=4
 set shiftwidth=4
 set nocindent
 
+" Deactivate automatic newline comments
+set formatoptions-=cro
+
 " Theme
 set background=dark
 set termguicolors
@@ -94,9 +98,6 @@ let g:airline_powerline_fonts=1
 let g:airline#extensions#branch#enabled=1
 
 " Indent Guides
-" let g:indentLine_enabled=1
-" let g:indentLine_color_term=235
-" let g:indentLine_char='┆'
 let g:indent_guides_enable_on_vim_startup = 1
 " let g:indent_guides_start_level = 2
 let g:indent_guides_guide_size = 1
