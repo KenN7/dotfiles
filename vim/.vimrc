@@ -58,7 +58,7 @@ set expandtab
 set backspace=indent,eol,start
 
 " Use system clipboard 
-set clipboard+=unnamed
+set clipboard=unnamedplus
 
 " Keep Undo history on buffer change
 set hidden
@@ -104,9 +104,14 @@ let g:indent_guides_guide_size = 1
 
 " YCM options
 let g:ycm_python_binary_path = 'python3'
+" leave preview mode (with docs) after insert mode is left
+let g:ycm_autoclose_preview_window_after_insertion = 1
 
 " Start tagbar
 autocmd VimEnter * TagbarToggle
+" change :copen to always open preview under main buffer
+autocmd FileType qf wincmd J
+" command! copen call botright copen
 
 " Display an error message.
 function! s:Warn(msg)
@@ -149,7 +154,7 @@ nnoremap <silent> <C-k> :Commentary<cr>
 noremap <C-q> :bp<cr>:bd #<cr>
 
 " Toggle Nerdtree
-noremap <silent> <C-f> ::NERDTreeToggle<CR>
+noremap <silent> <C-f> :NERDTreeToggle<CR>
 
 " remap ESC to exit terminal mode
 tnoremap <Esc> <C-\><C-n>
@@ -175,3 +180,14 @@ command! -bang -nargs=* DepRg
   \ call fzf#vim#grep(
   \ "rg --column --line-number --no-heading --color=always --smart-case " . <q-args> . " ~/depots", 1,
   \ <bang>0)
+
+" allows to search file with fzf and insert content of file in current buffer
+let g:pathToTemplates='/home/ken/depots'
+function! GoSink(file)
+    execute ':r '.g:pathToTemplates.a:file
+endfunction
+command! Go call fzf#run({
+    \  'source': 'ls '.g:pathToTemplates,
+    \  'sink':    function('GoSink')})
+
+
