@@ -182,12 +182,15 @@ command! -bang -nargs=* DepRg
   \ <bang>0)
 
 " allows to search file with fzf and insert content of file in current buffer
-let g:pathToTemplates='/home/ken/depots'
 function! GoSink(file)
-    execute ':r '.g:pathToTemplates.a:file
+    let l:path_to_file = fnamemodify(a:file, ':p')
+    echom l:path_to_file
+    execute ':r ' . l:path_to_file
 endfunction
-command! Go call fzf#run({
-    \  'source': 'ls '.g:pathToTemplates,
-    \  'sink':    function('GoSink')})
+
+command! -bang -nargs=* InsertFile 
+    \ call fzf#run({
+    \ 'source': 'find ' . <q-args> . " -path '*/\.*' -prune -o -print \| sed '1d'",
+    \ 'sink':    function('GoSink')})
 
 
