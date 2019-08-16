@@ -190,7 +190,7 @@ endfunction
 
 command! -bang -nargs=* InsertFile 
     \ call fzf#run({
-    \ 'source': 'find ' . <q-args> . " -path '*/\.*' -prune -o -print \| sed '1d'",
+    \ 'source': 'find ' . <q-args> . " -path '*/\.*' -prune -o -type f -print \| sed '1d'",
     \ 'sink':    function('GoSink')})
 
 
