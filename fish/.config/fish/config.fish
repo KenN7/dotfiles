@@ -1,4 +1,4 @@
-. ~/.bash_aliases
+#!/usr/bin/fish
 
 set -x EDITOR vim
 if status --is-interactive; and type -q keychain
@@ -10,5 +10,5 @@ eval (thefuck --alias | tr '
 ' ';')
 end
 
-set PATH /home/ken/dotfiles/scripts /home/ken/.local/bin $PATH
-source /home/ken/.config/fish/aliases.fish
+set PATH $HOME/dotfiles/scripts $HOME/.local/bin $PATH
+source $HOME/.config/fish/aliases.fish
