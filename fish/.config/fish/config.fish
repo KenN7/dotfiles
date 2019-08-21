@@ -1,5 +1,8 @@
 #!/usr/bin/fish
 
+# settings soecific to platform
+source $HOME/.config/fish/local.fish
+
 set -x EDITOR vim
 if status --is-interactive; and type -q keychain
   keychain --eval --quiet -Q id_rsa | source
