@@ -1,7 +1,9 @@
 #!/usr/bin/fish
 
-# settings soecific to platform
-source $HOME/.config/fish/local.fish
+# settings specific to some platforms
+if test -e $HOME/.config/fish/local.fish
+    source $HOME/.config/fish/local.fish
+end
 
 set -x EDITOR vim
 if status --is-interactive; and type -q keychain
