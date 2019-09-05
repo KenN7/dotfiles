@@ -108,7 +108,7 @@ let g:ycm_python_binary_path = 'python3'
 let g:ycm_autoclose_preview_window_after_insertion = 1
 
 " Start tagbar
-autocmd VimEnter * TagbarToggle
+" autocmd VimEnter * TagbarToggle
 " change :copen to always open preview under main buffer
 autocmd FileType qf wincmd J
 " command! copen call botright copen
