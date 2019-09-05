@@ -22,7 +22,8 @@ Plug 'Valloric/YouCompleteMe', { 'dir': '~/.vim/plugged/YouCompleteMe', 'do': 'p
 Plug 'sbdchd/neoformat'
 Plug 'lervag/vimtex'
 " my shit \o/
-Plug 'kenn7/vim-arsync'
+" Plug 'kenn7/vim-arsync'
+Plug '/home/ken/depots/vim-arsync'
 
 call plug#end()
 

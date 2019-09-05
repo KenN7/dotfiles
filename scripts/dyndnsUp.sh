@@ -2,16 +2,18 @@
 # Copyright © 2005-2007 - Julien Valroff <julien@kirya.net>
 # Parts of the script Copyright © 2001-2002 - Dag Wieers <dag@wieers.com>
  
-KEY="/home/ken/privkeys/Khome.kenh.fr.+157+08148.private"
-SERVER="ns.ananas.space"
-ZONE="kenh.fr"
+# KEY="/home/ken/privkeys/Khome.kenh.fr.+157+08148.private"
+source /home/ken/privkeys/dynkenh_key.priv  #loads the KEY var
+SERVER="ns341354.ip-46-105-97.eu"
+ZONE="dyn.kenh.fr"
 RR="home.$ZONE."
-IPADDR=$(curl https://dev.ananas.space/ip/)
+# IPADDR=$(curl https://dev.ananas.space/ip/)
+IPADDR=$(curl https://api.ipify.org)
 ADMIN="dyndns@kenh.fr"
 LOGFILE="/home/ken/privkeys/dnslog.log"
  
 (
-cat <<EOF | nsupdate -k "$KEY" -v
+cat <<EOF | nsupdate -y "$KEY" -v
 server $SERVER
 zone $ZONE
 update delete $RR A
