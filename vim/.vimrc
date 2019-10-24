@@ -22,8 +22,8 @@ Plug 'Valloric/YouCompleteMe', { 'dir': '~/.vim/plugged/YouCompleteMe', 'do': 'p
 Plug 'sbdchd/neoformat'
 Plug 'lervag/vimtex'
 " my shit \o/
-" Plug 'kenn7/vim-arsync'
-Plug '/home/ken/depots/vim-arsync'
+Plug 'kenn7/vim-arsync'
+" Plug '/home/ken/depots/vim-arsync'
 
 call plug#end()
 
@@ -107,6 +107,12 @@ let g:indent_guides_guide_size = 1
 let g:ycm_python_binary_path = 'python3'
 " leave preview mode (with docs) after insert mode is left
 let g:ycm_autoclose_preview_window_after_insertion = 1
+
+" LaTex completion
+if !exists('g:ycm_semantic_triggers')
+  let g:ycm_semantic_triggers = {}
+endif
+au VimEnter * let g:ycm_semantic_triggers.tex=g:vimtex#re#youcompleteme
 
 " Start tagbar
 " autocmd VimEnter * TagbarToggle
