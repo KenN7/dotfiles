@@ -21,6 +21,7 @@ Plug 'junegunn/fzf.vim'
 Plug 'Valloric/YouCompleteMe', { 'dir': '~/.vim/plugged/YouCompleteMe', 'do': 'python3 install.py --all' }
 Plug 'sbdchd/neoformat'
 Plug 'lervag/vimtex'
+Plug 'reedes/vim-wordy'
 " my shit \o/
 Plug 'kenn7/vim-arsync'
 " Plug '/home/ken/depots/vim-arsync'
@@ -42,6 +43,12 @@ set nocompatible
 
 " Number the lines.
 set number
+
+" Hard wrap at 80 char and put vertical line
+set colorcolumn=80
+set textwidth=80
+" no auto wrapping
+set fo-=t
 
 " Show auto complete menus.
 set wildmenu
