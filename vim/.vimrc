@@ -119,7 +119,9 @@ let g:ycm_autoclose_preview_window_after_insertion = 1
 if !exists('g:ycm_semantic_triggers')
   let g:ycm_semantic_triggers = {}
 endif
-au VimEnter * let g:ycm_semantic_triggers.tex=g:vimtex#re#youcompleteme
+" au VimEnter * let g:ycm_semantic_triggers.tex=g:vimtex#re#youcompleteme
+" Count words with detex
+command! Countwords :!detex % | wc -w
 
 " Start tagbar
 " autocmd VimEnter * TagbarToggle
