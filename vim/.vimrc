@@ -119,9 +119,19 @@ let g:ycm_autoclose_preview_window_after_insertion = 1
 if !exists('g:ycm_semantic_triggers')
   let g:ycm_semantic_triggers = {}
 endif
-" au VimEnter * let g:ycm_semantic_triggers.tex=g:vimtex#re#youcompleteme
-" Count words with detex
-command! Countwords :!detex % | wc -w
+au VimEnter * let g:ycm_semantic_triggers.tex=g:vimtex#re#youcompleteme
+
+" My custom bibtex completion
+let g:my_bibtex_file = "/home/ken/depots/demiurge-bib/bibliography.bib"
+function! SinkBib(lines)
+    let l:key = split(a:lines)
+    execute ':normal! a' . l:key[0]
+endfunction
+" trigger bibtex complete on '@@'
+inoremap <silent> @@ <c-g>u<c-o>:call fzf#run({
+            \ 'source': 'bib-ls.py -f' . g:my_bibtex_file,
+            \ 'sink': function('SinkBib'),
+            \ 'down': '40%'})<CR>
 
 " Start tagbar
 " autocmd VimEnter * TagbarToggle
