@@ -1,10 +1,15 @@
 #!/usr/bin/python3
-from pybtex.database import parse_file
+from pybtex.database import parse_file,parse_string
 import argparse
 from pathlib import Path
 
 def main(args):
-    bib_data = parse_file(args.f)
+    bibtext = ""
+    for bibfile in args.f:
+        with open(bibfile, 'r') as f:
+            bibtext += f.read()
+    # bib_data = parse_file(args.f)
+    bib_data = parse_string(bibtext, bib_format="bibtex")
     for entry in bib_data.entries.items():
         try:
             print(f"{entry[0]} -- {format_authors(entry[1])} ({entry[1].fields['year']}), \"{entry[1].fields['title']}\"")
@@ -31,7 +36,7 @@ def format_authors(entry):
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument("-s", help="string to search")
-    parser.add_argument("-f", help="File to search in", type=Path, required=True)
+    parser.add_argument("-f", help="File to search in", type=Path, nargs='+', required=True)
     args = parser.parse_args()
     main(args)
 

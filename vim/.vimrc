@@ -122,14 +122,14 @@ endif
 au VimEnter * let g:ycm_semantic_triggers.tex=g:vimtex#re#youcompleteme
 
 " My custom bibtex completion
-let g:my_bibtex_file = "/home/ken/depots/demiurge-bib/bibliography.bib"
+let g:my_bibtex_file = "/home/ken/depots/demiurge-bib/author.bib /home/ken/depots/demiurge-bib/journal.bib /home/ken/depots/demiurge-bib/bibliography.bib"
 function! SinkBib(lines)
     let l:key = split(a:lines)
     execute ':normal! a' . l:key[0]
 endfunction
 " trigger bibtex complete on '@@'
 inoremap <silent> @@ <c-g>u<c-o>:call fzf#run({
-            \ 'source': 'bib-ls.py -f' . g:my_bibtex_file,
+            \ 'source': 'bib-ls.py -f ' . g:my_bibtex_file,
             \ 'sink': function('SinkBib'),
             \ 'down': '40%'})<CR>
 
