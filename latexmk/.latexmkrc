@@ -1,0 +1,1 @@
+$bibtex = 'pybtex %O %B';
