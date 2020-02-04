@@ -192,6 +192,9 @@ map <C-a> <esc>ggVG<CR>
 " search path of file of folder in current project (subdirs)
 imap <c-x><c-f> <plug>(fzf-complete-path)
 
+" Border style of fzf
+let g:fzf_layout = { 'window': { 'width': 0.9, 'height': 0.6 } }
+
 " search in the whole home folder (can be long)
 inoremap <c-x><c-h> <c-r>=fzf#vim#complete#path("find ~/ -path '*/\.*' -prune -o -print \| sed '1d'")<cr>
 
