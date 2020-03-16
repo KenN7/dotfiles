@@ -15,5 +15,6 @@ eval (thefuck --alias | tr '
 ' ';')
 end
 
-set PATH $HOME/dotfiles/scripts $HOME/.local/bin $PATH
+set PATH $HOME/dotfiles/scripts $HOME/.local/bin $HOME/.npm/bin $PATH
+set NODE_PATH $HOME/.npm/lib/node_modules $NODE_PATH
 source $HOME/.config/fish/aliases.fish

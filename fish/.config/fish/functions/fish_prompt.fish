@@ -275,7 +275,7 @@ end
 function __pf_cwd_prompt -d "Write out current working directory"
     __pf_prompt_segment "cwd" $pf_text_dark $pf_color_cwd
     #printf " %s " (prompt_pwd)
-    printf " %s " (pwd|sed "s=$HOME=~=")
+    printf " %s " (pwd|sed "s=$HOME=~="|sed "s:\([^/]\)[^/]*/:\1/:g")
 end
 
 

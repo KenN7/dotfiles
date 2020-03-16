@@ -21,9 +21,10 @@ Plug 'junegunn/fzf.vim'
 Plug 'Valloric/YouCompleteMe', { 'dir': '~/.vim/plugged/YouCompleteMe', 'do': 'python3 install.py --all' }
 Plug 'sbdchd/neoformat'
 Plug 'lervag/vimtex'
+Plug 'reedes/vim-wordy'
 " my shit \o/
-" Plug 'kenn7/vim-arsync'
-Plug '/home/ken/depots/vim-arsync'
+Plug 'kenn7/vim-arsync'
+" Plug '/home/ken/depots/vim-arsync'
 
 call plug#end()
 
@@ -42,6 +43,12 @@ set nocompatible
 
 " Number the lines.
 set number
+
+" Hard wrap at 80 char and put vertical line
+set colorcolumn=80
+set textwidth=80
+" no auto wrapping
+set fo-=t
 
 " Show auto complete menus.
 set wildmenu
@@ -108,6 +115,24 @@ let g:ycm_python_binary_path = 'python3'
 " leave preview mode (with docs) after insert mode is left
 let g:ycm_autoclose_preview_window_after_insertion = 1
 
+" LaTex completion
+if !exists('g:ycm_semantic_triggers')
+  let g:ycm_semantic_triggers = {}
+endif
+au VimEnter * let g:ycm_semantic_triggers.tex=g:vimtex#re#youcompleteme
+
+" My custom bibtex completion
+let g:my_bibtex_file = "/home/ken/depots/demiurge-bib/author.bib /home/ken/depots/demiurge-bib/journal.bib /home/ken/depots/demiurge-bib/bibliography.bib"
+function! SinkBib(lines)
+    let l:key = split(a:lines)
+    execute ':normal! a' . l:key[0]
+endfunction
+" trigger bibtex complete on '@@'
+inoremap <silent> @@ <c-g>u<c-o>:call fzf#run({
+            \ 'source': 'bib-ls.py -f ' . g:my_bibtex_file,
+            \ 'sink': function('SinkBib'),
+            \ 'down': '40%'})<CR>
+
 " Start tagbar
 " autocmd VimEnter * TagbarToggle
 " change :copen to always open preview under main buffer
@@ -166,6 +191,9 @@ map <C-a> <esc>ggVG<CR>
 " Insert mode completion for fzf
 " search path of file of folder in current project (subdirs)
 imap <c-x><c-f> <plug>(fzf-complete-path)
+
+" Border style of fzf
+let g:fzf_layout = { 'window': { 'width': 0.9, 'height': 0.6 } }
 
 " search in the whole home folder (can be long)
 inoremap <c-x><c-h> <c-r>=fzf#vim#complete#path("find ~/ -path '*/\.*' -prune -o -print \| sed '1d'")<cr>
