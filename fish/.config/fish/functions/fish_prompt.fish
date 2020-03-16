@@ -17,7 +17,7 @@
 # Characters
 function __pf_set_separator -d "Check for Powerline font and set separator"
     # If Powerline modified fonts are installed, use them for nicer output
-    if type --quiet locate -a test -n (locate powerline)
+    if test -n (locate powerline)
         set --universal SEPARATOR ''
 #        set --universal SEPARATOR ''
     else
