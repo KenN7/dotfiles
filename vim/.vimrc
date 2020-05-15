@@ -7,6 +7,7 @@ call plug#begin('~/.vim/plugged')
 Plug 'tpope/vim-sensible'
 Plug 'tyrannicaltoucan/vim-quantum'
 Plug 'tpope/vim-fugitive'
+Plug 'mhinz/vim-startify'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'tpope/vim-commentary'
@@ -45,8 +46,8 @@ set nocompatible
 set number
 
 " Hard wrap at 80 char and put vertical line
-set colorcolumn=80
-set textwidth=80
+set colorcolumn=100
+set textwidth=100
 " no auto wrapping
 set fo-=t
 
@@ -182,8 +183,8 @@ noremap <C-q> :bp<cr>:bd #<cr>
 " Toggle Nerdtree
 noremap <silent> <C-f> :NERDTreeToggle<CR>
 
-" remap ESC to exit terminal mode
-tnoremap <Esc> <C-\><C-n>
+" remap ESC to exit terminal mode (breaks fzf popup)
+" tnoremap <Esc> <C-\><C-n>
 
 " Select all
 map <C-a> <esc>ggVG<CR>

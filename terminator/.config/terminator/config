@@ -1,20 +1,37 @@
 [global_config]
-  enabled_plugins = ActivityWatch,
   focus = mouse
-  inactive_color_offset = 0.81
   tab_position = bottom
-  title_font = Fira Code Bold Italic 9
-  title_inactive_bg_color = "#2f2f2f"
-  title_inactive_fg_color = "#8f8f8f"
-  title_receive_bg_color = "#9f9f9f"
-  title_receive_fg_color = "#000000"
-  title_transmit_bg_color = "#dfdfdf"
   title_transmit_fg_color = "#000000"
+  title_transmit_bg_color = "#dfdfdf"
+  title_receive_fg_color = "#000000"
+  title_receive_bg_color = "#9f9f9f"
+  title_inactive_fg_color = "#8f8f8f"
+  title_inactive_bg_color = "#2f2f2f"
+  inactive_color_offset = 0.81
+  enabled_plugins = ActivityWatch,
+  title_font = Fira Code Bold Italic 9
 [keybindings]
+  go_up = <Primary>Up
   go_down = <Primary>Down
   go_left = <Primary>Left
   go_right = <Primary>Right
-  go_up = <Primary>Up
+[profiles]
+  [[default]]
+    visible_bell = True
+    urgent_bell = True
+    background_darkness = 0.78
+    background_type = transparent
+    cursor_color = "#dcdccc"
+    font = Fira Code 10
+    foreground_color = "#ffffff"
+    scrollbar_position = hidden
+    scroll_on_keystroke = False
+    scrollback_lines = 1500
+    scrollback_infinite = True
+    use_system_font = False
+    copy_on_selection = True
+  [[n&b]]
+    cursor_color = "#aaaaaa"
 [layouts]
   [[default]]
     [[[child1]]]
@@ -24,21 +41,147 @@
     [[[window0]]]
       parent = ""
       type = Window
+  [[layout1]]
+    [[[child0]]]
+      fullscreen = False
+      last_active_window = True
+      maximised = False
+      order = 0
+      parent = ""
+      position = 345:78
+      size = 1975, 1243
+      title = fish
+      type = Window
+    [[[child1]]]
+      active_page = 0
+      labels = None, None, None
+      last_active_term = dc882f25-fed1-4eff-8ea2-8a40cb5c09dc, 6fa8b96e-5f7e-4b48-b23b-f886f680effe, aeb81f0f-7ca5-44f4-879a-d08609ab011a
+      order = 0
+      parent = child0
+      type = Notebook
+    [[[child11]]]
+      order = 1
+      parent = child1
+      position = 380
+      ratio = 0.316666666667
+      type = VPaned
+    [[[child12]]]
+      order = 0
+      parent = child11
+      position = 984
+      ratio = 0.499492385787
+      type = HPaned
+    [[[child15]]]
+      order = 1
+      parent = child11
+      position = 1044
+      ratio = 0.529949238579
+      type = HPaned
+    [[[child18]]]
+      order = 2
+      parent = child1
+      position = 955
+      ratio = 0.795833333333
+      type = VPaned
+    [[[child2]]]
+      order = 0
+      parent = child1
+      position = 457
+      ratio = 0.380833333333
+      type = VPaned
+    [[[child3]]]
+      order = 0
+      parent = child2
+      position = 532
+      ratio = 0.270050761421
+      type = HPaned
+    [[[child5]]]
+      order = 1
+      parent = child3
+      position = 555
+      ratio = 0.386221294363
+      type = HPaned
+    [[[child8]]]
+      order = 1
+      parent = child2
+      position = 919
+      ratio = 0.466497461929
+      type = HPaned
+    [[[terminal10]]]
+      directory = /home/ken/depots/ArtProj
+      order = 1
+      parent = child8
+      profile = default
+      type = Terminal
+      uuid = 7c0fe8f5-74b1-4ab7-baa3-520662cf9f56
+    [[[terminal13]]]
+      directory = /home/ken/depots/argos3-Automode
+      order = 0
+      parent = child12
+      profile = default
+      type = Terminal
+      uuid = 6fe521a9-4efb-4bc2-933a-a56e9face6d9
+    [[[terminal14]]]
+      directory = /home/ken/depots/robots-thesis
+      order = 1
+      parent = child12
+      profile = default
+      type = Terminal
+      uuid = 059d9a99-7da3-4122-afe6-4b05b8a407ec
+    [[[terminal16]]]
+      directory = /home/ken/depots/demiurge-epuck-dao
+      order = 0
+      parent = child15
+      profile = default
+      type = Terminal
+      uuid = 6fa8b96e-5f7e-4b48-b23b-f886f680effe
+    [[[terminal17]]]
+      directory = /home/ken/depots
+      order = 1
+      parent = child15
+      profile = default
+      type = Terminal
+      uuid = a8f0ba92-90fe-43b3-9b44-9b01a2b38847
+    [[[terminal19]]]
+      directory = /home/ken/depots/gianduja
+      order = 0
+      parent = child18
+      profile = default
+      type = Terminal
+      uuid = 50e7891b-fcf6-422b-8d1a-670ec0e76667
+    [[[terminal20]]]
+      directory = /home/ken/depots/gianduja
+      order = 1
+      parent = child18
+      profile = default
+      type = Terminal
+      uuid = aeb81f0f-7ca5-44f4-879a-d08609ab011a
+    [[[terminal4]]]
+      directory = /home/ken/depots/ArtProj
+      order = 0
+      parent = child3
+      profile = default
+      type = Terminal
+      uuid = dc882f25-fed1-4eff-8ea2-8a40cb5c09dc
+    [[[terminal6]]]
+      directory = /home/ken/depots/ArtProj
+      order = 0
+      parent = child5
+      profile = default
+      type = Terminal
+      uuid = 6ed12779-7b0f-4739-aec2-4b53840270e0
+    [[[terminal7]]]
+      directory = /home/ken/depots/ArtProj
+      order = 1
+      parent = child5
+      profile = default
+      type = Terminal
+      uuid = b905667e-3f98-451c-b65f-880d7f67f812
+    [[[terminal9]]]
+      directory = /home/ken/depots/ArtProj
+      order = 0
+      parent = child8
+      profile = default
+      type = Terminal
+      uuid = 58ef4497-7f07-403b-9314-9c37b8303169
 [plugins]
-[profiles]
-  [[default]]
-    background_darkness = 0.78
-    background_type = transparent
-    copy_on_selection = True
-    cursor_color = "#dcdccc"
-    font = Source Code Pro Medium 10
-    foreground_color = "#ffffff"
-    scroll_on_keystroke = False
-    scrollback_infinite = True
-    scrollback_lines = 1500
-    scrollbar_position = hidden
-    urgent_bell = True
-    use_system_font = False
-    visible_bell = True
-  [[n&b]]
-    cursor_color = "#aaaaaa"
