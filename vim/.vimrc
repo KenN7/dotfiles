@@ -187,7 +187,7 @@ noremap <silent> <C-f> :NERDTreeToggle<CR>
 " tnoremap <Esc> <C-\><C-n>
 
 " Select all
-map <C-a> <esc>ggVG<CR>
+" map <C-a> <esc>ggVG<CR>
 
 " Insert mode completion for fzf
 " search path of file of folder in current project (subdirs)
