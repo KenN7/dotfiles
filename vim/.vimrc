@@ -23,6 +23,8 @@ Plug 'Valloric/YouCompleteMe', { 'dir': '~/.vim/plugged/YouCompleteMe', 'do': 'p
 Plug 'sbdchd/neoformat'
 Plug 'lervag/vimtex'
 Plug 'reedes/vim-wordy'
+Plug 'kshenoy/vim-signature'
+Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install' }
 " my shit \o/
 Plug 'kenn7/vim-arsync'
 " Plug '/home/ken/depots/vim-arsync'
@@ -133,6 +135,9 @@ inoremap <silent> @@ <c-g>u<c-o>:call fzf#run({
             \ 'source': 'bib-ls.py -f ' . g:my_bibtex_file,
             \ 'sink': function('SinkBib'),
             \ 'down': '40%'})<CR>
+
+" vimtex flavor setting
+let g:tex_flavor = 'latex'
 
 " Start tagbar
 " autocmd VimEnter * TagbarToggle
