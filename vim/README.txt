@@ -15,4 +15,4 @@ Install ripgrep to get :Rg command to check inside of files
 # For Coc.nvim:
 Some things only work on nvim (e.g. type hints for rust),
 to install various packages (after :PlugInstall), do:
-`:CocInstall coc-pyright coc-rust-analyser coc-tsserver coc-html coc-clangd`
+`:CocInstall coc-pyright coc-rust-analyser coc-tsserver coc-html coc-clangd, coc-vimtex`

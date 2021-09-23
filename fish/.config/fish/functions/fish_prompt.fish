@@ -286,7 +286,7 @@ function __pf_git_prompt -d "Write out the git prompt"
 
     function __pf_git_branch_name -d 'Get branch name'
         # Not on a branch
-        if string match --regex 'no branch' "$pf_git_status" >/dev/null
+        if string match --regex 'no branch' "$pf_git_status" 2> /dev/null
             printf "%s %s " $DETACHED (__pf_git_tag_or_hash)
         # Initial commit
         else if set branch_name (string match --regex 'commit on (.*)' "$pf_git_status")
@@ -298,7 +298,7 @@ function __pf_git_prompt -d "Write out the git prompt"
     end
 
     function __pf_git_tag_or_hash -d 'Get tag or hash'
-        if set --local tag (git describe --tags --exact-match ^/dev/null)
+        if set --local tag (git describe --tags --exact-match 2> /dev/null)
             printf "%s" $tag
         else
             # Tag does not match, print a hash
@@ -309,7 +309,7 @@ function __pf_git_prompt -d "Write out the git prompt"
     function __pf_git_set_color -d 'Set color depending on the tree status'
         # If there are more lines than just the branch line, repo is dirty
         if test (count $pf_git_status) -gt 1
-            if string match --regex 'U\? |\?U |DD |AA ' "$pf_git_status" >/dev/null
+            if string match --regex 'U\? |\?U |DD |AA ' "$pf_git_status" 2> /dev/null
                 set --global pf_git_status_bg $pf_color_git_conflicted
                 set --global pf_git_status_text $pf_text_light
             else
@@ -389,7 +389,7 @@ function __pf_git_prompt -d "Write out the git prompt"
     end
 
     # Get git repo status
-    if set --global pf_git_status (git status --porcelain --branch --ignore-submodules=dirty ^/dev/null)
+    if set --global pf_git_status (git status --porcelain --branch --ignore-submodules=dirty 2> /dev/null)
         __pf_git_set_color
         __pf_prompt_segment "git" $pf_git_status_text $pf_git_status_bg
         if set --query pf_no_counters

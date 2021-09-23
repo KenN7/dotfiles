@@ -19,16 +19,14 @@ Plug 'majutsushi/tagbar'
 Plug 'slim-template/vim-slim'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
-" Plug 'Valloric/YouCompleteMe', { 'dir': '~/.vim/plugged/YouCompleteMe', 'do': 'python3 install.py --all' }
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-" Plug 'sbdchd/neoformat'
 Plug 'lervag/vimtex'
 Plug 'reedes/vim-wordy'
 Plug 'kshenoy/vim-signature'
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install' }
 " my shit \o/
-Plug 'kenn7/vim-arsync'
-" Plug '/home/ken/depots/vim-arsync'
+" Plug 'kenn7/vim-arsync'
+Plug '/home/ken/depots/vim-arsync'
 
 call plug#end()
 
@@ -49,8 +47,8 @@ set nocompatible
 set number
 
 " Hard wrap at 80 char and put vertical line
-set colorcolumn=100
-set textwidth=100
+set colorcolumn=80
+set textwidth=80
 " no auto wrapping
 set fo-=t
 
@@ -219,17 +217,6 @@ nnoremap <silent><nowait> <space>k  :<C-u>CocPrev<CR>
 " Resume latest coc list.
 nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
 
-" YCM options
-" let g:ycm_python_binary_path = 'python3'
-" " leave preview mode (with docs) after insert mode is left
-" let g:ycm_autoclose_preview_window_after_insertion = 1
-
-" " LaTex completion
-" if !exists('g:ycm_semantic_triggers')
-"   let g:ycm_semantic_triggers = {}
-" endif
-" au VimEnter * let g:ycm_semantic_triggers.tex=g:vimtex#re#youcompleteme
-
 " My custom bibtex completion
 let g:my_bibtex_file = "/home/ken/depots/demiurge-bib/author.bib /home/ken/depots/demiurge-bib/journal.bib /home/ken/depots/demiurge-bib/bibliography.bib"
 function! SinkBib(lines)
@@ -245,6 +232,15 @@ inoremap <silent> @@ <c-g>u<c-o>:call fzf#run({
 " vimtex flavor setting
 let g:tex_flavor = 'latex'
 
+let g:vimtex_compiler_latexmk = {
+      \ 'options' : [
+      \   '-verbose',
+      \   '-file-line-error',
+      \   '-synctex=1',
+      \   '-interaction=nonstopmode',
+      \   '-shell-escape',
+      \ ],
+      \ }
 " Start tagbar
 " autocmd VimEnter * TagbarToggle
 " change :copen to always open preview under main buffer
@@ -279,11 +275,6 @@ let &t_EI = "\<Esc>]50;CursorShape=0\x7"
 nnoremap <C-p> :bnext<CR>
 nnoremap <C-o> :bprevious<CR>
 
-" Map Control S for save
-noremap <silent> <C-S> :update<CR>
-vnoremap <silent> <C-S> <C-C>:update<CR>
-inoremap <silent> <C-S>  <C-O>:update<CR>
-
 " Comment block
 vnoremap <silent> <C-k> :Commentary<cr>
 nnoremap <silent> <C-k> :Commentary<cr>
@@ -296,9 +287,6 @@ noremap <silent> <C-f> :NERDTreeToggle<CR>
 
 " remap ESC to exit terminal mode (breaks fzf popup)
 " tnoremap <Esc> <C-\><C-n>
-
-" Select all
-" map <C-a> <esc>ggVG<CR>
 
 " Insert mode completion for fzf
 " search path of file of folder in current project (subdirs)

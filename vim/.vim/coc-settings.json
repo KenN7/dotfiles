@@ -1,3 +1,8 @@
 {
-    "coc.preferences.formatOnSaveFiletypes": ["javascript", "javascriptreact", "css", "rust", "python"]
+    "coc.preferences.formatOnSaveFiletypes": ["javascript", "javascriptreact", "css", "rust", "python"],
+    "rust-analyzer.cargo.loadOutDirsFromCheck": true,
+    "rust-analyzer.procMacro.enable": true,
+    "rust-analyzer.updates.channel": "stable",
+    "rust-analyzer.diagnostics.disabled": ["macro-error"],
+    "python.formatting.provider": "black"
 }

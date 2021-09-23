@@ -15,6 +15,6 @@ eval (thefuck --alias | tr '
 ' ';')
 end
 
-set PATH $HOME/.cargo/bin $HOME/dotfiles/scripts $HOME/.local/bin $HOME/.npm/bin $PATH
+set PATH $HOME/.cargo/bin $HOME/dotfiles/scripts $HOME/.local/bin $HOME/.npm/bin $HOME/.local/share/gem/ruby/3.0.0/bin $PATH
 set NODE_PATH $HOME/.npm/lib/node_modules $NODE_PATH
 source $HOME/.config/fish/aliases.fish
