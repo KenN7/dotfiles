@@ -11,8 +11,7 @@ if status --is-interactive; and type -q keychain
 end
 
 if type -q thefuck
-eval (thefuck --alias | tr '
-' ';')
+    thefuck --alias | source
 end
 
 set PATH $HOME/.cargo/bin $HOME/dotfiles/scripts $HOME/.local/bin $HOME/.npm/bin $HOME/.local/share/gem/ruby/3.0.0/bin $PATH
