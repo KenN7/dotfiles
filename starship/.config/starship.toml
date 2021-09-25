@@ -29,7 +29,7 @@ $character"""
 #add_newline = false
 
 [username]
-format = "[ $user]($style)[$separator](#505050 bg:black)"
+format = "[ $user]($style)[](#505050 bg:black)"
 style_user = "white bg:#505050"
 style_root = "bold white"
 show_always = true
