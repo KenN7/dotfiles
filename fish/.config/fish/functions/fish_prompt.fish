@@ -409,7 +409,7 @@ function __ken_time_prompt -d "Write out the time at end of prompt"
 #        set --global pf_user_status_text $pf_text_light
 #        set pf_user_status_bg $pf_color_user
     __pf_prompt_segment "time" $pf_user_status_text $pf_user_status_bg
-    printf " %s " (date +%X)
+    printf " %s " (date +%R)
 end
 
 function __second_line_prompt -d "Write out the second line init prompt"
@@ -433,11 +433,11 @@ function __ken_acpi_prompt -d "Check and write battery life"
     if test "$__fish_nim_prompt_has_acpi"
         if [ (acpi -a 2> /dev/null | grep off) ]
             __pf_prompt_segment "acpil" $pf_text_dark ea844a
-            echo -n '['
+            echo -n ' '
        #    echo -n (acpi -b|cut -d' ' -f 4-)
             echo -n (acpi -b | cut -d' ' -f 4; and acpi -b | cut -d' ' -f 5 | cut -d':' -f 1-2)
        #    set_color -o green
-            echo -n ']'
+            echo -n ' '
         end
     end
 end
@@ -458,17 +458,6 @@ function fish_prompt --description 'Write out the prompt'
 
     # Disable virtual environment prompt; we have our own override
     set --universal VIRTUAL_ENV_DISABLE_PROMPT 1
-
-	#printf "%s%s%s%s%s%s" \
-	#printf "%s" \
-    #    (__pf_status_prompt)\
-    #    (__pf_venv_prompt)\
-    #    (__pf_user_prompt)\
-    #    (__pf_hostname_prompt)\
-    #    (__pf_cwd_prompt)\
-    #    (__pf_git_prompt)\
-    #    (__ken_acpi_prompt)\
-    #    (__pf_prompt_end)
         __pf_status_prompt
         __pf_venv_prompt
         __pf_user_prompt

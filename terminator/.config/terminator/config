@@ -10,7 +10,8 @@
   inactive_color_offset = 0.81
   enabled_plugins = ActivityWatch,
   suppress_multiple_term_dialog = True
-  title_font = Fira Code Bold Italic 9
+  title_use_system_font = False
+  title_font = FiraCode Nerd Font 10
 [keybindings]
   go_up = <Primary>Up
   go_down = <Primary>Down
@@ -23,7 +24,7 @@
     background_darkness = 0.8
     background_type = transparent
     cursor_color = "#dcdccc"
-    font = Fira Code 10
+    font = FiraCode Nerd Font weight=450 10
     foreground_color = "#ffffff"
     scrollbar_position = hidden
     scroll_on_keystroke = False
