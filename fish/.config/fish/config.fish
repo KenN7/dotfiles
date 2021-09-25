@@ -10,7 +10,7 @@ if status --is-interactive; and type -q keychain
   keychain --eval --quiet -Q id_rsa | source
 end
 
-if type -q thefuck
+if status --is-interactive; and type -q thefuck
     thefuck --alias | source
 end
 
@@ -19,8 +19,8 @@ set NODE_PATH $HOME/.npm/lib/node_modules $NODE_PATH
 source $HOME/.config/fish/aliases.fish
 
 ## Starship prompt
-if status --is-interactive
-   # source ("/usr/bin/starship" init fish --print-full-init | psub)
+if status --is-interactive; and type -q starship
+   starship init fish | source
 end
 
 ## Functions

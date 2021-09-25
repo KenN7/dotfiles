@@ -25,10 +25,11 @@ $status\
 $line_break\
 $character"""
 
+
 #add_newline = false
 
 [username]
-format = "[ $user]($style)[](#505050 bg:black)"
+format = "[ $user]($style)[$separator](#505050 bg:black)"
 style_user = "white bg:#505050"
 style_root = "bold white"
 show_always = true
@@ -100,62 +101,3 @@ format = '[\[$symbol$status_common_meaning$status_signal_name$status_maybe_int\]
 map_symbol = true
 disabled = false
 
-[aws]
-symbol = " "
-
-[conda]
-symbol = " "
-
-[dart]
-symbol = " "
-
-[docker_context]
-symbol = " "
-
-[elixir]
-symbol = " "
-
-[elm]
-symbol = " "
-
-[golang]
-symbol = " "
-
-[hg_branch]
-symbol = " "
-
-[java]
-symbol = " "
-
-[julia]
-symbol = " "
-
-[nim]
-symbol = " "
-
-[nix_shell]
-symbol = " "
-
-[nodejs]
-symbol = " "
-
-[package]
-symbol = " "
-
-[perl]
-symbol = " "
-
-[php]
-symbol = " "
-
-[python]
-symbol = " "
-
-[ruby]
-symbol = " "
-
-[rust]
-symbol = " "
-
-[swift]
-symbol = "ﯣ "
