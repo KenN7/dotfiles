@@ -16,14 +16,18 @@ alias fix_kwin='kwin_x11 --replace'
 
 ## Useful aliases
 # Replace ls with exa
-alias ls='exa -al --color=always --group-directories-first --icons' # preferred listing
-alias la='exa -a --color=always --group-directories-first --icons'  # all files and dirs
-alias ll='exa -l --color=always --group-directories-first --icons'  # long format
-alias lt='exa -aT --color=always --group-directories-first --icons' # tree listing
-alias l.="exa -a | egrep '^\.'"                                     # show only dotfiles
+if status --is-interactive; and type -q exa
+    alias ls='exa -al --color=always --group-directories-first --icons' # preferred listing
+    alias la='exa -a --color=always --group-directories-first --icons'  # all files and dirs
+    alias ll='exa -l --color=always --group-directories-first --icons'  # long format
+    alias lt='exa -aT --color=always --group-directories-first --icons' # tree listing
+    alias l.="exa -a | egrep '^\.'"                                     # show only dotfiles
+end
 
 # Replace some more things with better alternatives
-alias cat='bat --style header --style rules --style snip --style changes --style header'
+if status --is-interactive; and type -q bat
+    alias cat='bat --style header --style rules --style snip --style changes --style header'
+end
 [ ! -x /usr/bin/yay ] && [ -x /usr/bin/paru ] && alias yay='paru'
 
 # Common use
