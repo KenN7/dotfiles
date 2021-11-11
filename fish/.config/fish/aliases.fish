@@ -26,7 +26,8 @@ end
 
 # Replace some more things with better alternatives
 if status --is-interactive; and type -q bat
-    alias cat='bat --style header --style rules --style snip --style changes --style header'
+    alias fat='bat --style header --style rules --style snip --style changes --style header'
+    alias cat='bat --style header --style rules --style snip --style changes --style header --paging never'
 end
 [ ! -x /usr/bin/yay ] && [ -x /usr/bin/paru ] && alias yay='paru'
 
