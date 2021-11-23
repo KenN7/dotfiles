@@ -14,6 +14,10 @@ if status --is-interactive; and type -q thefuck
     thefuck --alias | source
 end
 
+if status --is-interactive; and type -q zoxide
+    zoxide init fish | source
+end
+
 set PATH $HOME/.cargo/bin $HOME/dotfiles/scripts $HOME/.local/bin $HOME/.npm/bin $HOME/.local/share/gem/ruby/3.0.0/bin $PATH
 set NODE_PATH $HOME/.npm/lib/node_modules $NODE_PATH
 source $HOME/.config/fish/aliases.fish
