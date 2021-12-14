@@ -1,6 +1,6 @@
 ## function to connect to remote ssh, launch vnc server and connect client
 
-## usage: vncto $user $ip $port, target has to have x0vncserver and client tigervnc
+## usage: vncto $user $ip $port, target has to have tigervnc (x0vncserver) and client tigervnc
 ## e.g. vncto ken 192.168.1.50 22
 
 function vncto
