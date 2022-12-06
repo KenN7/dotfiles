@@ -1,17 +1,10 @@
 [global_config]
   focus = mouse
+  handle_size = 7
   tab_position = bottom
-  title_transmit_fg_color = "#000000"
-  title_transmit_bg_color = "#dfdfdf"
-  title_receive_fg_color = "#000000"
-  title_receive_bg_color = "#9f9f9f"
-  title_inactive_fg_color = "#8f8f8f"
-  title_inactive_bg_color = "#2f2f2f"
   inactive_color_offset = 0.81
   enabled_plugins = ActivityWatch,
   suppress_multiple_term_dialog = True
-  title_use_system_font = False
-  title_font = FiraCode Nerd Font 10
 [keybindings]
   go_up = <Primary>Up
   go_down = <Primary>Down
@@ -23,7 +16,6 @@
     urgent_bell = True
     background_darkness = 0.8
     background_type = transparent
-    cursor_color = "#dcdccc"
     font = FiraCode Nerd Font weight=450 10
     foreground_color = "#ffffff"
     scrollbar_position = hidden
@@ -33,7 +25,6 @@
     use_system_font = False
     copy_on_selection = True
   [[n&b]]
-    cursor_color = "#aaaaaa"
 [layouts]
   [[default]]
     [[[child1]]]
