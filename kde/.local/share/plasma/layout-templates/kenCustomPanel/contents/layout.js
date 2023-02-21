@@ -23,6 +23,7 @@ if (panel.formFactor === "horizontal") {
 }
 
 var kickoff = panel.addWidget("org.kde.plasma.kickoff")
+kickoff.writeConfig("icon", "distributor-logo-garuda")
 kickoff.currentConfigGroup = ["Shortcuts"]
 kickoff.writeConfig("global", "Alt+F1")
 
