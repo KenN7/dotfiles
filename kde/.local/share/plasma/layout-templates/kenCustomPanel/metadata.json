@@ -1,0 +1,24 @@
+{
+    "KPlugin": {
+        "Authors": [
+            {
+                "Email": "ken@kenh",
+                "Name": "KenH"
+            }
+        ],
+        "Category": "",
+        "Description": "my cutsom panel featuring application launcher, task manager and system tray, and dock",
+        "EnabledByDefault": true,
+        "Id": "kenCustomPanel",
+        "License": "LGPLv2+",
+        "Name": "Ken custom panels",
+        "ServiceTypes": [
+            "Plasma/LayoutTemplate"
+        ],
+        "Website": "https://www.kde.org/plasma-desktop"
+    },
+    "X-Plasma-ContainmentCategories": [
+        "panel"
+    ],
+    "X-Plasma-Shell": "plasmashell"
+}
